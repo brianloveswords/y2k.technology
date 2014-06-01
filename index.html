@@ -3,12 +3,33 @@
   <BODY>
     <CENTER><BR><BR><BR><BR><BR><BR><BR>
       <H1>
-        Today's date is <BR>
         <SCRIPT TYPE="text/javascript">
-          today = new Date();
-          today.setUTCFullYear(today.getUTCFullYear()-100)
-          document.write(today);
-          document.title(today);
+          months = [
+            "January",
+            "February",
+            "March",
+            "April",
+            "May",
+            "June",
+            "July",
+            "August",
+            "September",
+            "October",
+            "November",
+            "December",
+          ];
+          function setDate() {
+            today = new Date();
+            month = months[today.getMonth()];
+            day = today.getDate();
+            year = today.getFullYear()-100;
+            date =  month + " " + day + ", " + year;
+            html = "<H1>";
+            html += date;
+            document.write(html);
+            document.title = date;
+          }
+          setDate();
         </SCRIPT>
       </H1>
     </CENTER>
